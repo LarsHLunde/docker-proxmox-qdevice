@@ -10,4 +10,7 @@ if test -f "$FILE"; then
     exit 0
 fi
 
+/usr/sbin/sshd
+corosync-qnetd
+
 sleep infinity
