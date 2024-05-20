@@ -11,6 +11,7 @@ docker run \
   -p 2222:22 \
   --name qdevice \
   --restart unless-stopped \
+  --security-opt cgroups=rw \
   qdevice
 docker start qdevice
 ```
