@@ -11,7 +11,7 @@ docker run \
   -p 2222:22 \
   --name qdevice \
   --restart unless-stopped \
-  --cgroupns host \
+  --privileged \
   qdevice
 docker start qdevice
 ```
