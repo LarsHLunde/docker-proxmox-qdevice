@@ -8,5 +8,4 @@ if test -f "$FILE"; then
     exit 0
 fi
 
-cd /application 
-node app.js
+sleep infinity
