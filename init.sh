@@ -12,5 +12,5 @@ fi
 
 /usr/sbin/sshd
 corosync-qnetd
-
+corosync
 sleep infinity
