@@ -83,8 +83,7 @@ print("If not run, the command manually through SSH or the web console")
 print("The login will be as root")
 
 if yes_or_no() then
-	print("ssh root@" .. node1ip .. " \"ssh-keyscan -p " ..  qdevport .. " " .. qdevip .. " | tee -a ~/.ssh/known_hosts\"")
-	execute_return("ssh root@" .. node1ip .. " \"ssh-keyscan -p " ..  qdevport .. " " .. qdevip .. " | tee -a ~/.ssh/known_hosts\"")
+	execute_return("ssh -t root@" .. node1ip .. " \"ssh-keyscan -p " ..  qdevport .. " " .. qdevip .. " | tee -a ~/.ssh/known_hosts\"")
 end
 
 print("You need to add the SSH pubkey to node 2 with : ")
@@ -95,8 +94,7 @@ print("If not run, the command manually through SSH or the web console")
 print("The login will be as root")
 
 if yes_or_no() then
-	print("ssh root@" .. node2ip .. " \"ssh-keyscan -p " ..  qdevport .. " " .. qdevip .. " | tee -a ~/.ssh/known_hosts\"")
-	execute_return("ssh root@" .. node2ip .. " \"ssh-keyscan -p " ..  qdevport .. " " .. qdevip .. " | tee -a ~/.ssh/known_hosts\"")
+	execute_return("ssh -t root@" .. node2ip .. " \"ssh-keyscan -p " ..  qdevport .. " " .. qdevip .. " | tee -a ~/.ssh/known_hosts\"")
 end
 
 
