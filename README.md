@@ -7,6 +7,7 @@ git clone https://github.com/LarsHLunde/docker-proxmox-qdevice.git
 cd docker-proxmox-qdevice
 docker build -t qdevice .
 docker run \
+  -it \
   -p 5403:5403 \
   -p 2222:22 \
   --name qdevice \
