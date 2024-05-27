@@ -8,6 +8,9 @@ if test -f "$FILE"; then
     chmod 750 /run/sshd
     # Adding root login over ssh
     echo "PermitRootLogin yes" > /etc/ssh/sshd_config.d/qdevice.conf
+    /usr/sbin/sshd
+    corosync-qnetd
+    corosync
     echo "Starting device installer script ..."
     lua /setup.lua
     echo "Start the docker the normal way and it will start normally"
