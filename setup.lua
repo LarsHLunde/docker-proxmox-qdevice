@@ -1,5 +1,5 @@
+print("")
 print("Before continuing, make sure your 2 proxmox hosts are already in a cluster")
-
 
 function yes_or_no()
 	local answer
@@ -77,24 +77,39 @@ execute_return("ssh-keyscan " .. node2ip .. " >> ~/.ssh/known_hosts")
 
 print("You need to add the SSH pubkey to node 1 with : ")
 print("ssh-keyscan -p " ..  qdevport .. " " .. qdevip .. " | tee -a ~/.ssh/known_hosts")
-print("")
-print("Would you like to try to add it through the script?")
-print("If not run, the command manually through SSH or the web console")
-print("The login will be as root")
+--print("")
+--print("Would you like to try to add it through the script?")
+--print("If not run, the command manually through SSH or the web console")
+--print("The login will be as root")
 
-if yes_or_no() then
-	execute_return("ssh -t root@" .. node1ip .. " \"/usr/bin/ssh-keyscan -p " ..  qdevport .. " " .. qdevip .. " | tee -a ~/.ssh/known_hosts\"")
-end
+--if yes_or_no() then
+--	execute_return("ssh -t root@" .. node1ip .. " \"/usr/bin/ssh-keyscan -p " ..  qdevport .. " " .. qdevip .. " | tee -a ~/.ssh/known_hosts\"")
+--end
+
+print("Please run the command on node 1 and come back to the script")
+get_input("Press enter to continue")
+
 
 print("You need to add the SSH pubkey to node 2 with : ")
 print("ssh-keyscan -p " ..  qdevport .. " " .. qdevip .. " | tee -a ~/.ssh/known_hosts")
 print("")
-print("Would you like to try to add it through the script?")
-print("If not run, the command manually through SSH or the web console")
-print("The login will be as root")
+--print("Would you like to try to add it through the script?")
+--print("If not run, the command manually through SSH or the web console")
+--print("The login will be as root")
 
-if yes_or_no() then
-	execute_return("ssh -t root@" .. node2ip .. " \"/usr/bin/ssh-keyscan -p " ..  qdevport .. " " .. qdevip .. " | tee -a ~/.ssh/known_hosts\"")
-end
+--if yes_or_no() then
+--	execute_return("ssh -t root@" .. node2ip .. " \"/usr/bin/ssh-keyscan -p " ..  qdevport .. " " .. qdevip .. " | tee -a ~/.ssh/known_hosts\"")
+--end
 
+print("Please run the command on node 2 and come back to the script")
+get_input("Press enter to continue")
 
+print("Go back to node 1 and run the following command")
+print("pvecm qdevice setup " .. qdevip)
+print("")
+print("then run this command on node 1")
+print("pvecm status")
+print("")
+print("It should show you have 3 nodes now")
+
+get_input("Press enter to continue")
