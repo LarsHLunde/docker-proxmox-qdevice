@@ -1,6 +1,7 @@
 # docker-proxmox-qdevice
 A Docker instance made to run as third quorom disk for a 2 server Proxmox Cluster
-
+## AFTER MUCH EXPERIMENTATION I HAVE DECIDED TO ABANDON THE PROJECT
+## I will write a guide in assorted for setup
 ## How to install
 ```
 git clone https://github.com/LarsHLunde/docker-proxmox-qdevice.git
